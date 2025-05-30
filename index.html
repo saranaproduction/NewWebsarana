@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SARANA PRODUCTION</title>
+  <style>
+    /* Reset & base */
+    body, h1, h2, h3, p, ul, li, a, button, input, label {
+      margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background: #fff;
+      color: #333;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+    }
+    a {
+      color: #004080;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    header {
+      background: #004080;
+      color: white;
+      padding: 1rem 1.5rem;
+      text-align: center;
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+    }
+    nav {
+      margin-top: 0.5rem;
+    }
+    nav a {
+      margin: 0 1rem;
+      font-weight: 600;
+    }
+    main {
+      flex: 1;
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    .btn-whatsapp {
+      background: #25d366;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 24px;
+      font-weight: 700;
+      display: inline-block;
+      margin-top: 1rem;
+      transition: background 0.3s ease;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .btn-whatsapp:hover {
+      background: #1ebe5b;
+    }
+    /* Hero */
+    .hero {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+    /* Services */
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 1.5rem;
+    }
+    .service-item {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 1rem;
+      background: #f9f9f9;
+      box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+    .service-item:hover {
+      box-shadow: 0 4px 10px rgb(0 0 0 / 0.2);
+    }
+    .service-item h3 {
+      margin-bottom: 0.8rem;
+      color: #004080;
+    }
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
+      gap: 1rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      object-fit: cover;
+      height: 100px;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    /* Modal for gallery */
+    #modal {
+      position: fixed;
+      top:0; left:0; right:0; bottom:0;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    #modal img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 8px;
+    }
+    /* Contact Form */
+    form {
+      max-width: 480px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    label {
+      font-weight: 600;
+      color: #004080;
+    }
+    input[type="text"], input[type="email"], textarea {
+      padding: 0.6rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    textarea {
+      min-height: 80px;
+    }
+    footer {
+      background: #004080;
+      color: white;
+      text-align: center;
+      padding: 1rem 1.5rem;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+    /* Responsive */
+    @media(max-width: 600px) {
+      nav a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+      }
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SARANA PRODUCTION</h1>
+    <nav>
+      <a href="#beranda">Beranda</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+  <main>
+    <section id="beranda" class="hero">
+      <h2>Solusi Event Profesional di Kalimantan</h2>
+      <p>Meeting, Convention, Invention, Exhibition — dengan tim berpengalaman dan peralatan modern.</p>
+      <button class="btn-whatsapp" onclick="openWhatsApp('Halo SARANA PRODUCTION, saya tertarik dengan layanan Anda.')">Hubungi via WhatsApp</button>
+    </section>
+
+    <section id="layanan">
+      <h2>Layanan Kami</h2>
+      <div class="services-list">
+        <article class="service-item">
+          <h3>Meeting</h3>
+          <p>Menyediakan fasilitas dan dukungan untuk meeting perusahaan dan organisasi Anda.</p>
+        </article>
+        <article class="service-item">
+          <h3>Convention</h3>
+          <p>Konvensi dan acara besar dengan perencanaan dan pelaksanaan profesional.</p>
+        </article>
+        <article class="service-item">
+          <h3>Invention</h3>
+          <p>Inovasi acara kreatif untuk kebutuhan presentasi dan peluncuran produk.</p>
+        </article>
+        <article class="service-item">
+          <h3>Exhibition</h3>
+          <p>Pameran dan display produk dengan tata letak menarik dan profesional.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="galeri">
+      <h2>Galeri Kegiatan</h2>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=400&q=80" alt="Event 1" onclick="openModal(this)" />
+        <img src="https://images.unsplash.com/photo-1524985069026-dd778a71c7b4?auto=format&fit=crop&w=400&q=80" alt="Event 2" onclick="openModal(this)" />
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Event 3" onclick="openModal(this)" />
+        <img src="https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=400&q=80" alt="Event 4" onclick="openModal(this)" />
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Event 5" onclick="openModal(this)" />
+      </div>
+    </section>
+
+    <section id="kontak">
+      <h2>Kontak Kami</h2>
+      <form id="contactForm" onsubmit="submitForm(event)">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" placeholder="Nama Anda" required />
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Email Anda" required />
+        <label for="message">Pesan:</label>
+        <textarea id="message" name="message" placeholder="Tulis pesan Anda..." required></textarea>
+        <button type="submit" class="btn-whatsapp">Kirim via WhatsApp</button>
+      </form>
+
+      <div style="margin-top: 2rem;">
+        <h3>Lokasi Kantor Kami</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15998.950512296536!2d116.9972!3d-0.502555!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2df2d3b12ac9165d%3A0x672e4262d33a1e59!2sJl.%20Juanda%20I%20Komplek%20BAP%20Anggrek%20Merpati%206%20No.%2052%2C%20Samarinda%20City%2C%20East%20Kalimantan!5e0!3m2!1sen!2sid!4v1685016575985!5m2!1sen!2sid"
+          width="100%"
+          height="250"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <p><strong>Samarinda:</strong> Jl. Juanda 1 Komplek BAP Anggrek Merpati 6 No.52 (Lantai 2)</p>
+        <p><strong>Balikpapan:</strong> Jl. AW. Syahrani Km.3 Perumnas Blok. 05 Rt. 15/63 Balikpapan Utama</p>
+        <p><strong>Banjarmasin:</strong> Jl. Yudistira 12 No. 21 Beruntung Jaya, Kota Banjarmasin</p>
+        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/sarana.productions?igsh=bnlyMDUwOTYyencw" target="_blank" rel="noopener">sarana.productions</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/6289692801045" target="_blank" rel="noopener">0896-9280-1045</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 SARANA PRODUCTION. All rights reserved.
+  </footer>
+
+  <!-- Modal gallery -->
+  <div id="modal" onclick="closeModal()">
+    <img src="" alt="Gallery Image" />
+  </div>
+
+  <script>
+    function openWhatsApp(message) {
+      const phone = '6289692801045'; // nomor tanpa tanda +
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+
+    function submitForm(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        alert('Mohon isi semua kolom.');
+        return;
+      }
+      const text = `Halo SARANA PRODUCTION,%0ANama: ${name}%0AEmail: ${email}%0APesan: ${message}`;
+      openWhatsApp(text);
+    }
+
+    // Gallery modal
+    const modal = document.getElementById('modal');
+    const modalImg = modal.querySelector('img');
+
+    function openModal(img) {
+      modal.style.display = 'flex';
+      modalImg.src = img.src;
+      modalImg.alt = img.alt;
+    }
+    function closeModal() {
+      modal.style.display = 'none';
+      modalImg.src = '';
+      modalImg.alt = '';
+    }
+  </script>
+</body>
+</html>
